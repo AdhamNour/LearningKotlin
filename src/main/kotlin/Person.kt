@@ -7,4 +7,5 @@ class Person(val firstName:String,val lastName:String) {
         var field1 = field
         return field1
     }
+    fun printInfo() = println("$firstName $lastName")
 }
