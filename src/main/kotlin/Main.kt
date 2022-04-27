@@ -2,9 +2,11 @@ fun getGreatings (greetingWord:String,greetingTarget:String) = "$greetingWord $g
 
 fun printGreeting (greetingStatement:String) = println(greetingStatement)
 
-fun greatGroup (greatingWord:String, greatingTargets:List<String>) = greatingTargets.forEach { greatingTarget:String -> printGreeting(getGreatings(greatingWord,greatingTarget)) }
+fun greatGroup (greatingWord:String, vararg greatingTargets:String) = greatingTargets.forEach { greatingTarget:String -> printGreeting(getGreatings(greatingWord,greatingTarget)) }
 
 fun main(args: Array<String>) {
-    val groupOfGreeting:List<String> = listOf("Ahmed","Mohammed","Samir","Zaid")
-    greatGroup("Hi",groupOfGreeting);
+    val person = Person("Adham","Nour")
+    person.neckName="Mobile Developer"
+    greatGroup("Hi",person.firstName,person.lastName,person.neckName.toString())
+
 }
